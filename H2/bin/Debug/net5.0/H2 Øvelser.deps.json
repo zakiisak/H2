@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "H2 Øvelser/1.0.0": {
+        "runtime": {
+          "H2 Øvelser.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "H2 Øvelser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

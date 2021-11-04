@@ -1,0 +1,19 @@
+﻿<Window x:Class="FlaskeAutomaten.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlaskeAutomaten"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas x:Name="VendingMachineCanvas">
+        <Rectangle HorizontalAlignment="Left" Height="42" Canvas.Left="10" Canvas.Top="200" Stroke="Red" VerticalAlignment="Top" Fill="Red" Width="60">
+        </Rectangle>
+        <Label Content="Producer" Foreground="White" Canvas.Left="11" Canvas.Top="208"/>
+        <Rectangle x:Name="ProducerBar" Height="26" Canvas.Left="75" Fill="AntiqueWhite" Canvas.Top="208" Width="243"/>
+        <Rectangle Height="100" Canvas.Left="323" Fill="Red" Canvas.Top="160" Width="100"/>
+        <Label Content="Splitter" Canvas.Left="349" Foreground="White" Canvas.Top="200"/>
+        <Button x:Name="StartButton" Click="Button_Click" Content="Start" Canvas.Left="40" Canvas.Top="23"/>
+
+    </Canvas>
+</Window>

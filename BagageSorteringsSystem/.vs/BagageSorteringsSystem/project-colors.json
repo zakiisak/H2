@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c072db94-cc3f-440c-84c0-758394c4a44e": {
+      "ProjectGuid": "c072db94-cc3f-440c-84c0-758394c4a44e",
+      "DisplayName": "BagageSorteringsSystem",
+      "ColorIndex": 0
+    },
+    "f404f511-b467-4839-9690-5d9741dda636": {
+      "ProjectGuid": "f404f511-b467-4839-9690-5d9741dda636",
+      "DisplayName": "FlightEditor",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

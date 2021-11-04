@@ -1,0 +1,16 @@
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.GlobalUsings.g.cs
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.csproj.AssemblyReference.cache
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.AssemblyInfoInputs.cache
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.AssemblyInfo.cs
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.csproj.CoreCompileInputs.cache
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\BagageSorteringsSystem.exe
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\BagageSorteringsSystem.deps.json
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\BagageSorteringsSystem.runtimeconfig.json
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\BagageSorteringsSystem.dll
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\ref\BagageSorteringsSystem.dll
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\bin\Debug\net6.0\BagageSorteringsSystem.pdb
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.dll
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\ref\BagageSorteringsSystem.dll
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.pdb
+C:\Users\Isak\source\repos\BagageSorteringsSystem\BagageSorteringsSystem\obj\Debug\net6.0\BagageSorteringsSystem.genruntimeconfig.cache

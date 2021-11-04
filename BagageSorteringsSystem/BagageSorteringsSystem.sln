@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31825.309
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BagageSorteringsSystem", "BagageSorteringsSystem\BagageSorteringsSystem.csproj", "{C072DB94-CC3F-440C-84C0-758394C4A44E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightEditor", "FlightEditor\FlightEditor.csproj", "{F404F511-B467-4839-9690-5D9741DDA636}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C072DB94-CC3F-440C-84C0-758394C4A44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C072DB94-CC3F-440C-84C0-758394C4A44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C072DB94-CC3F-440C-84C0-758394C4A44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C072DB94-CC3F-440C-84C0-758394C4A44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F404F511-B467-4839-9690-5D9741DDA636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F404F511-B467-4839-9690-5D9741DDA636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F404F511-B467-4839-9690-5D9741DDA636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F404F511-B467-4839-9690-5D9741DDA636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6254283F-CC4A-49B6-B24C-7F5A5AA320E6}
+	EndGlobalSection
+EndGlobal

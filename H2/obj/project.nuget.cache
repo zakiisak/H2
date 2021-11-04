@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "1NYeSCrpTAOAUcSUMZm45lUVAq5GaZrfmk0S5TdIe0uM6ipGWTFWLk5816tQ9z2y8hTbvru3eB+EdFZ0Ed17Pw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Isak\\source\\repos\\H2\\H2 Øvelser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Isak\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512",
+    "C:\\Users\\Isak\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Isak\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Isak\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

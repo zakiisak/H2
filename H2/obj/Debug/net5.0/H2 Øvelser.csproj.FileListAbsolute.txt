@@ -1,0 +1,24 @@
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.exe
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.deps.json
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.runtimeconfig.json
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.runtimeconfig.dev.json
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.dll
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\ref\H2 Øvelser.dll
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\bin\Debug\net5.0\H2 Øvelser.pdb
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.csproj.AssemblyReference.cache
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.AssemblyInfoInputs.cache
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.AssemblyInfo.cs
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.csproj.CoreCompileInputs.cache
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.dll
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\ref\H2 Øvelser.dll
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.pdb
+C:\Users\isak\source\repos\H2 Øvelser\H2 Øvelser\obj\Debug\net5.0\H2 Øvelser.genruntimeconfig.cache
+C:\Users\Isak\Source\Repos\H2\obj\Debug\net5.0\H2 Øvelser.dll
+C:\Users\Isak\Source\Repos\H2\obj\Debug\net5.0\ref\H2 Øvelser.dll
+C:\Users\Isak\Source\Repos\H2\obj\Debug\net5.0\H2 Øvelser.pdb
+C:\Users\Isak\source\repos\H2\obj\Debug\net5.0\H2 Øvelser.csproj.AssemblyReference.cache
+C:\Users\Isak\source\repos\H2\obj\Debug\net5.0\H2 Øvelser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isak\source\repos\H2\obj\Debug\net5.0\H2 Øvelser.AssemblyInfoInputs.cache
+C:\Users\Isak\source\repos\H2\obj\Debug\net5.0\H2 Øvelser.AssemblyInfo.cs
+C:\Users\Isak\source\repos\H2\obj\Debug\net5.0\H2 Øvelser.csproj.CoreCompileInputs.cache
