@@ -10,6 +10,8 @@ namespace FlightEditor
 {
     public class Program
     {
+
+        //Displays all the flights registered in the flight plan file
         private static void DisplayFlights(FlightPlanManager planManager)
         {
             List<Plane> planes = planManager.ReadFlightPlanFromFile();
@@ -21,6 +23,8 @@ namespace FlightEditor
             }
             Console.WriteLine();
         }
+
+        //Takes care of adding new flights from console input
         private static void AddNewFlight(FlightPlanManager planManager)
         {
             Destination? destination = null;
@@ -76,6 +80,7 @@ namespace FlightEditor
             planManager.SaveFlightPlan(planes);
         }
 
+        //Takes care of deleting flights from console input
         private static void DeleteFlight(FlightPlanManager planManager)
         {
             List<Plane> planes = planManager.ReadFlightPlanFromFile();

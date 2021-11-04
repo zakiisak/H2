@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BagageSorteringsSystem
 {
+    //Not used for much, just here to show how it could be designed.
     public class Passenger
     {
         public string Name { get; set; }

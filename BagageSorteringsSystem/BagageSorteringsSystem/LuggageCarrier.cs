@@ -22,6 +22,7 @@ namespace BagageSorteringsSystem
             this.LuggageSorter = LuggageSorter;
         }
 
+        //The roll function performed in a seperate thread
         private void Roll(object? state)
         {
             while(Rolling)
@@ -43,6 +44,7 @@ namespace BagageSorteringsSystem
             }
         }
 
+        //Locks the list and adds luggage onto the belt.
         public void AddLuggage(Luggage Luggage)
         {
             lock(this.Luggage)
@@ -51,29 +53,20 @@ namespace BagageSorteringsSystem
             }
         }
 
-        public bool CanBoardLuggage(Luggage Luggage)
-        {
-            if(Luggage != null)
-            {
-                if (Luggage.Weight <= 22)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
+        //Returns the count of luggage currently on the carrier belt
         public int GetLuggageCount()
         {
             return Luggage.Count;
         }
 
+        //Starts the luggage carrier thread
         public void BeginRolling()
         {
             Rolling = true;
             ThreadPool.QueueUserWorkItem(Roll);
         }
 
+        //Stops the luggage carrier thread
         public void StopRolling()
         {
             Rolling = false;

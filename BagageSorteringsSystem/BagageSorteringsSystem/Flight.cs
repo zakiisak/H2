@@ -17,11 +17,13 @@ namespace BagageSorteringsSystem
             this.DepartureTime = DepartureTime;
         }
 
+        //Updates the departure time from an external source
         public void UpdateDepartureTime(DateTime NewDeparture)
         {
             DepartureTime = NewDeparture;
         }
 
+        //Returns the name string of the enum destination
         public string GetDestinationName()
         {
             string? name = Enum.GetName(typeof(Destination), this.Destination);

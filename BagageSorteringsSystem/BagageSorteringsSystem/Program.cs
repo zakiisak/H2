@@ -23,7 +23,9 @@ namespace BagageSorteringsSystem
                 Console.WriteLine("3 - Vis over sigt over fly og deres optaget vægt");
                 Console.WriteLine("4 - Vis Antal af mistet bagage");
                 Console.Write("5 - Start/Stop Lufthavnens enheder. (Nuværdige status: ");
+                Console.ForegroundColor = airport.ServicesRunning ? ConsoleColor.Green : ConsoleColor.Red;
                 Console.WriteLine((airport.ServicesRunning ? "Kører" : "Nede") + ")");
+                Console.ForegroundColor = ConsoleColor.Gray;
 
                 char num = Console.ReadKey().KeyChar;
                 Console.Clear();

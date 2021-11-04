@@ -18,6 +18,7 @@ namespace BagageSorteringsSystem
             this.Planes.AddRange(Planes);
         }
 
+        //Removes the first found plane in the terminal containing the given flight
         public void DepartPlane(Flight Flight)
         {
             lock(Planes)

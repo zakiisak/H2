@@ -14,8 +14,8 @@ namespace BagageSorteringsSystem
         public List<Passenger> Passengers { get; private set; }
         private List<Luggage> Luggage { get; set; }
 
+        //A cached variable that contains the current weight of luggage on the plane
         public double LuggageWeight { get; private set; }
-
         public int MaxPassengers { get; private set; }
         public int MaxLuggageWeight { get; private set; }
 
@@ -41,16 +41,6 @@ namespace BagageSorteringsSystem
                 this.MaxLuggageWeight = Plane.MaxLuggageWeight;
             }
         }
-
-        public bool CanBoardLuggage(Luggage Luggage)
-        {
-            if(Luggage != null)
-            {
-                return LuggageWeight + Luggage.Weight <= MaxLuggageWeight;
-            }
-            return false;
-        }
-
         public int GetLuggageCount()
         {
             lock(this.Luggage)
