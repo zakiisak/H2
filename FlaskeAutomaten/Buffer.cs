@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlaskeAutomaten.Items;
+using System.Diagnostics;
+using System.Threading;
 
 namespace FlaskeAutomaten
 {
@@ -23,6 +25,18 @@ namespace FlaskeAutomaten
             lock(Beverages)
             {
                 Beverages.Enqueue(Beverage);
+                Monitor.PulseAll(Beverages);
+            }
+        }
+
+        public void Lock()
+        {
+            lock (Beverages)
+            {
+                while (true)
+                {
+
+                }
             }
         }
 
@@ -40,13 +54,14 @@ namespace FlaskeAutomaten
         {
             lock(Beverages)
             {
-                if(Beverages.Count > 0)
+                while(Beverages.Count == 0)
                 {
-                    Beverage beverage = Beverages.Dequeue();
-                    return beverage;
+                    Monitor.Wait(Beverages);
                 }
+
+                Beverage beverage = Beverages.Dequeue();
+                return beverage;
             }
-            return null;
         }
     }
 }

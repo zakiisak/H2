@@ -1,6 +1,7 @@
 ﻿using FlaskeAutomaten.Items;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -113,7 +114,8 @@ namespace FlaskeAutomaten
                         for (int i = 0; i < this.producedBelt.Count; i++)
                         {
                             BeverageUi ui = this.producedBelt[i];
-                            ui.MoveLabel();
+                            if(ui.x < 360)
+                                ui.MoveLabel();
                         }
                     }
 
@@ -153,6 +155,7 @@ namespace FlaskeAutomaten
         //An event that fires every time a beverage is split into it's own belt
         private void OnBeverageSplit(Beverage beverage)
         {
+            Debug.WriteLine("Beverage split");
             BeverageUi? beverageUi = null;
             lock (producedBelt)
             {
@@ -164,8 +167,10 @@ namespace FlaskeAutomaten
                 {
                     VendingMachineCanvas.Children.Remove(beverageUi.attachedLabel);
                 });
-                producedBelt.Remove(beverageUi);
-
+                lock (producedBelt)
+                {
+                    producedBelt.Remove(beverageUi);
+                }
                     
                 //find the index that we need to access on the customer belt
                 for(int i = 0; i < this.VendingMachine.Consumers.Length; i++)
@@ -206,7 +211,7 @@ namespace FlaskeAutomaten
         #region UI Methods
         private BeverageUi GenerateBeverageUi(Beverage beverage, double x, double y, double dx)
         {
-            Label label = CreateLabel(x, y, beverage.Name);
+            Label label = CreateLabel(x, y, beverage.Name + " #" + beverage.Id);
             BeverageUi ui = new BeverageUi(beverage, label, x, y, dx);
             return ui;
         }

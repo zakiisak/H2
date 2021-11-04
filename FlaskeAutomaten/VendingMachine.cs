@@ -17,7 +17,7 @@ namespace FlaskeAutomaten
 
         public VendingMachine()
         {
-            Type[] beverageTypes = new Type[] { typeof(Beer), typeof(Fanta), typeof(Cocio), typeof(Cola), typeof(IceTea), typeof(FaxeKondi) };
+            Type[] beverageTypes = new Type[] { typeof(Beer), typeof(Fanta), typeof(Cocio), typeof(Cola), typeof(IceTea)};
             this.Producer = new Producer(beverageTypes);
 
 

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FlightEditor/1.0.0": {
+        "dependencies": {
+          "BagageSorteringsSystem": "1.0.0"
+        },
+        "runtime": {
+          "FlightEditor.dll": {}
+        }
+      },
+      "BagageSorteringsSystem/1.0.0": {
+        "runtime": {
+          "BagageSorteringsSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FlightEditor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BagageSorteringsSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

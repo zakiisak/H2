@@ -25,6 +25,7 @@ namespace FlaskeAutomaten
         private void ProduceBeverages(object? state)
         {
             Random rng = new Random();
+            
             while(Running)
             {
                 int random = rng.Next(3);
@@ -36,7 +37,7 @@ namespace FlaskeAutomaten
                 if(this.OnProduced != null)
                     this.OnProduced(beverage);
 
-                Thread.Sleep(150);
+                Thread.Sleep(600);
             }
         }
 

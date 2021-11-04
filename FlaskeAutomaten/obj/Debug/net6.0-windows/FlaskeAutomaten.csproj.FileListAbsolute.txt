@@ -19,3 +19,24 @@ C:\Users\Isak\source\repos\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutoma
 C:\Users\Isak\source\repos\FlaskeAutomaten\obj\Debug\net6.0-windows\ref\FlaskeAutomaten.dll
 C:\Users\Isak\source\repos\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.pdb
 C:\Users\Isak\source\repos\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.genruntimeconfig.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\FlaskeAutomaten.exe
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\FlaskeAutomaten.deps.json
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\FlaskeAutomaten.runtimeconfig.json
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\FlaskeAutomaten.dll
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\ref\FlaskeAutomaten.dll
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\bin\Debug\net6.0-windows\FlaskeAutomaten.pdb
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.csproj.AssemblyReference.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten_MarkupCompile.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten_MarkupCompile.lref
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.g.resources
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.AssemblyInfoInputs.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.AssemblyInfo.cs
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.csproj.CoreCompileInputs.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.dll
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\ref\FlaskeAutomaten.dll
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.pdb
+C:\Users\Isak\source\repos\H2 Opgaver\FlaskeAutomaten\obj\Debug\net6.0-windows\FlaskeAutomaten.genruntimeconfig.cache

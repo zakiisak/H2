@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isak\\source\\repos\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj": {}
+    "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isak\\source\\repos\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj": {
+    "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isak\\source\\repos\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj",
         "projectName": "BagageSorteringsSystem",
-        "projectPath": "C:\\Users\\Isak\\source\\repos\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj",
+        "projectPath": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\BagageSorteringsSystem\\BagageSorteringsSystem\\BagageSorteringsSystem.csproj",
         "packagesPath": "C:\\Users\\Isak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isak\\source\\repos\\BagageSorteringsSystem\\BagageSorteringsSystem\\obj\\",
+        "outputPath": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\BagageSorteringsSystem\\BagageSorteringsSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

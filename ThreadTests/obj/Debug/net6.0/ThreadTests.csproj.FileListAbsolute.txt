@@ -1,0 +1,16 @@
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ThreadTests.exe
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ThreadTests.deps.json
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ThreadTests.runtimeconfig.json
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ThreadTests.dll
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ref\ThreadTests.dll
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\bin\Debug\net6.0\ThreadTests.pdb
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.GlobalUsings.g.cs
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.csproj.AssemblyReference.cache
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.AssemblyInfoInputs.cache
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.AssemblyInfo.cs
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.csproj.CoreCompileInputs.cache
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.dll
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ref\ThreadTests.dll
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.pdb
+C:\Users\Isak\source\repos\H2 Opgaver\ThreadTests\obj\Debug\net6.0\ThreadTests.genruntimeconfig.cache

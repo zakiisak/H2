@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isak\\source\\repos\\H2\\H2 Øvelser.csproj": {}
+    "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\H2\\H2 Øvelser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isak\\source\\repos\\H2\\H2 Øvelser.csproj": {
+    "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\H2\\H2 Øvelser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isak\\source\\repos\\H2\\H2 Øvelser.csproj",
+        "projectUniqueName": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\H2\\H2 Øvelser.csproj",
         "projectName": "H2 Øvelser",
-        "projectPath": "C:\\Users\\Isak\\source\\repos\\H2\\H2 Øvelser.csproj",
+        "projectPath": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\H2\\H2 Øvelser.csproj",
         "packagesPath": "C:\\Users\\Isak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isak\\source\\repos\\H2\\obj\\",
+        "outputPath": "C:\\Users\\Isak\\source\\repos\\H2 Opgaver\\H2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -60,6 +60,28 @@ namespace BagageSorteringsSystem
             }
         }
 
+        public bool SaveFlightPlan(List<Plane> Planes)
+        {
+            try
+            {
+                string[] lines = new string[Planes.Count];
+                for(int i = 0; i < Planes.Count; i++)
+                {
+                    Plane plane = Planes[i];
+                    lines[i] = $"{plane.Flight.GetDestinationName()},{plane.Flight.DepartureTime.ToString("HH:mm:ss")},{plane.MaxPassengers},{plane.MaxLuggageWeight}";
+                }
+
+                File.WriteAllLines(FilePath, lines);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Failed to save flight plan! " + ex);
+                return false;
+            }
+        }
+
         public List<Plane> ReadFlightPlanFromFile()
         {
             try

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,7 +28,7 @@ namespace FlaskeAutomaten
             {
                 this.Output.Add(entry.Key, entry.Value);
             }
-            this.Delay = 100;
+            this.Delay = 500;
         }
 
         public void SplitBeverage(object? state)
@@ -35,18 +36,17 @@ namespace FlaskeAutomaten
             while(Running)
             {
                 Beverage nextBeverage = Input.GetNextBeverage();
-                if (nextBeverage != null)
+                Debug.WriteLine("beverage: " + nextBeverage.Name + " #" + nextBeverage.Id);
+                
+                Type beverageType = nextBeverage.GetType();
+
+                if (Output.ContainsKey(beverageType))
                 {
-                    Type beverageType = nextBeverage.GetType();
+                    Buffer buffer = Output[beverageType];
+                    buffer.AddBeverage(nextBeverage);
 
-                    if (Output.ContainsKey(beverageType))
-                    {
-                        Buffer buffer = Output[beverageType];
-                        buffer.AddBeverage(nextBeverage);
-
-                        if (this.OnSplit != null)
-                            this.OnSplit(nextBeverage);
-                    }
+                    if (this.OnSplit != null)
+                        this.OnSplit(nextBeverage);
                 }
 
                 Thread.Sleep(Delay);
