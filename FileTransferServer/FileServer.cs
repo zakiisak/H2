@@ -33,21 +33,24 @@ namespace FileTransferServer
                 IPEndPoint localEndPoint = new IPEndPoint(ipAddress, FileTransfer.Config.Port);
 
                 // Create a Socket that will use the Tcp protocol      
-                Socket listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                Server = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
-                listener.Bind(localEndPoint);
+                Server.Bind(localEndPoint);
 
                 // Specify how many requests a Socket can listen before it gives Server busy response.  
                 // We will listen 10 requests at a time  
-                listener.Listen(10);
-
-                Socket newClient = listener.Accept();
-                ConnectedClient client = new ConnectedClient(newClient);
-                lock(ConnectedSockets)
+                Server.Listen(10);
+                while (IsStarted())
                 {
-                    ConnectedSockets.Add(client);
+
+                    Socket newClient = Server.Accept();
+                    ConnectedClient client = new ConnectedClient(newClient);
+                    lock (ConnectedSockets)
+                    {
+                        ConnectedSockets.Add(client);
+                    }
+                    client.Start();
                 }
-                client.Start();
 
             }
             catch (Exception ex)
@@ -55,6 +58,14 @@ namespace FileTransferServer
                 Debug.WriteLine("Failed to start server! Exception: " + ex);
             }
             
+        }
+        public void Stop()
+        {
+            if(Server != null)
+            {
+                Server.Shutdown(SocketShutdown.Both);
+                Server.Close();
+            }
         }
 
         public void Start()
@@ -64,7 +75,7 @@ namespace FileTransferServer
 
         public bool IsStarted()
         {
-            return false;
+            return Server != null && Server.IsBound;
         }
     }
 }

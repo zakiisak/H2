@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,50 @@ namespace FileTransferClient
     /// </summary>
     public partial class Explorer : Window
     {
-        public Explorer()
+        private FileClient Client;
+        private string Directory = "/";
+        public Explorer(FileClient Client)
         {
+            this.Client = Client;
             InitializeComponent();
+
+            Client.GetFileNamesInDirectory(Directory, delegate (string directory, string[] files)
+            {
+                Debug.WriteLine(directory + ", file count: " + files.Length);
+                Dispatcher.Invoke(() =>
+                {
+                    PopulateFiles(directory, files);
+                });
+            });
+        }
+
+        private void PopulateFiles(string directory, string[] files)
+        {
+            Directory = directory;
+            List<FileItem> filesInDirectory = new List<FileItem>();
+
+            foreach(string file in files)
+            {
+                if (file.EndsWith("/"))
+                    filesInDirectory.Add(new FileItem(true, file.Substring(0, file.Length - 1)));
+                else filesInDirectory.Add(new FileItem(false, file));
+            }
+
+            FileItems.ItemsSource = filesInDirectory;
+        }
+
+        private void FileItems_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                // Note that you can have more than one file.
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach(string file in files)
+                {
+                    Client.WriteFile(Directory, file);
+                }
+
+            }
         }
     }
 }

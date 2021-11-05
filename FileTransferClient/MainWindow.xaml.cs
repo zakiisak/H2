@@ -20,9 +20,27 @@ namespace FileTransferClient
     /// </summary>
     public partial class MainWindow : Window
     {
+        private FileClient Client;
         public MainWindow()
         {
             InitializeComponent();
+            Client = new FileClient();
+        }
+
+        private void OnConnectPressed(object sender, RoutedEventArgs e)
+        {
+            int port;
+            if (int.TryParse(PortField.Text, out port))
+            {
+                if (Client.Connect(IpField.Text, port))
+                {
+                    new Explorer(Client).Show();
+                    this.Close();
+                }
+                else MessageBox.Show("Kunne ikke forbinde til " + IpField + ":" + port, "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else MessageBox.Show("Den angivne port er ikke valid", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
     }
 }

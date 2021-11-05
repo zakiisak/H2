@@ -19,3 +19,11 @@ C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-window
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\ref\FileTransferClient.dll
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\FileTransferClient.pdb
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\FileTransferClient.genruntimeconfig.cache
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\Explorer.g.cs
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\Explorer.baml
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\bin\Debug\net6.0-windows\FileTransferServer.deps.json
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\bin\Debug\net6.0-windows\FileTransferServer.runtimeconfig.json
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\bin\Debug\net6.0-windows\FileTransferServer.exe
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\bin\Debug\net6.0-windows\FileTransferServer.dll
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\bin\Debug\net6.0-windows\FileTransferServer.pdb
+C:\Users\Isak\source\repos\H2 Opgaver\FileTransferClient\obj\Debug\net6.0-windows\FileTransferClient.csproj.CopyComplete

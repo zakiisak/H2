@@ -8,7 +8,7 @@
          ResizeMode="CanMinimize"
         Title="MainWindow" Height="150" Width="159">
     <Grid>
-        <Button Content="Start" Click="OnStartClicked" HorizontalAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Height="34" Width="67"/>
+        <Button x:Name="StartButton"  Content="Start" Click="OnStartClicked" HorizontalAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Height="34" Width="67"/>
 
 
     </Grid>

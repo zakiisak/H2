@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -18,19 +19,15 @@ namespace FileTransferClient
 
         private Queue<Action> SendQueue = new Queue<Action>();
 
-        public FileClient(string ip, int port)
-        {
-            this.Ip = ip;
-            this.Port = port;
-        }
-
         public bool IsConnected()
         {
             return Client != null && Client.Connected;
         }
 
-        public bool Connect()
+        public bool Connect(string Ip, int Port)
         {
+            this.Ip = Ip;
+            this.Port = Port;
             try
             {
                 // Establish the local endpoint for the socket.
@@ -39,7 +36,7 @@ namespace FileTransferClient
                 IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, Port);
 
                 // Create a TCP socket.
-                Client = new Socket(AddressFamily.InterNetwork,
+                Client = new Socket(ipAddr.AddressFamily,
                         SocketType.Stream, ProtocolType.Tcp);
 
                 // Connect the socket to the remote endpoint.
@@ -69,8 +66,6 @@ namespace FileTransferClient
             }
         }
 
-        private static byte[] dataPrefix = new byte[] { 84, 84, 84, 32, 32, 32, 13, 37 };
-
         public void GetFileNamesInDirectory(string remoteDirectory, ClientEvents.OnReceiveFileList onReceiveFileList)
         {
             lock (SendQueue)
@@ -79,35 +74,30 @@ namespace FileTransferClient
                 {
                     byte[] stringData = Encoding.Unicode.GetBytes(remoteDirectory);
 
-                    byte[] data;
-                    int offset;
-                    lock (dataPrefix)
-                    {
-                        data = new byte[dataPrefix.Length + stringData.Length];
 
-                        for (int i = 0; i < dataPrefix.Length; i++)
-                            data[i] = dataPrefix[i];
-                        offset = dataPrefix.Length;
+                    Client.Send(new byte[] { FileTransfer.Config.ServerListCode });
+
+                    byte[] confirmationBuffer = new byte[256];
+                    Client.Receive(confirmationBuffer);
+                    if (confirmationBuffer[0] == FileTransfer.Config.ServerListCode)
+                    {
+                        Client.Send(stringData);
+
+                        byte[] receivedData = new byte[8192];
+
+                        int bytesReceived = Client.Receive(receivedData);
+                        string fileSegments = Encoding.Unicode.GetString(receivedData, 0, bytesReceived);
+                        string[] split = fileSegments.Split('\n');
+
+                        onReceiveFileList(remoteDirectory, split);
                     }
 
-                    for (int i = 0; i < stringData.Length; i++)
-                        data[offset + i] = stringData[i];
-
-                    Client.Send(data);
-
-                    byte[] receivedData = new byte[8192];
-
-                    int bytesReceived = Client.Receive(receivedData);
-                    string fileSegments = Encoding.Unicode.GetString(receivedData, 0, bytesReceived);
-                    string[] split = fileSegments.Split('\n');
-
-                    onReceiveFileList(remoteDirectory, split);
-
                 });
+                Monitor.PulseAll(SendQueue);
             }
         }
 
-        public void WriteFile(string filePath, ClientEvents.OnFileSent onFileSent = null)
+        public void WriteFile(string serverDirectory, string filePath, ClientEvents.OnFileSent onFileSent = null)
         {
             lock (SendQueue)
             {
@@ -116,7 +106,34 @@ namespace FileTransferClient
                     bool success = false;
                     try
                     {
-                        Client.SendFile(filePath);
+                        Client.Send(new byte[] { FileTransfer.Config.ServerFileReceiveCode });
+
+                        byte[] confirmationBuffer = new byte[256];
+                        Client.Receive(confirmationBuffer);
+
+                        FileStream stream = File.OpenRead(filePath);
+                        string fileName = Path.GetFileName(filePath);
+
+                        byte[] fileNameBytes = Encoding.Unicode.GetBytes(serverDirectory + "\n" + fileName);
+
+                        Client.Send(fileNameBytes);
+
+                        byte[] fileNameConfirmation = new byte[32];
+
+                        int confirmationBytesReceived = Client.Receive(fileNameConfirmation);
+                        if (confirmationBytesReceived == 1)
+                        {
+                            byte[] buffer = new byte[4096];
+
+                            int num = 0;
+                            while ((num = stream.Read(buffer, 0, buffer.Length)) != 0)
+                            {
+                                Client.Send(buffer);
+                            }
+
+                            Client.Send(FileTransfer.Config.EndOfFile);
+                        }
+
                         success = true;
                     }
                     catch (Exception ex)
@@ -127,6 +144,7 @@ namespace FileTransferClient
                         onFileSent(filePath, success);
 
                 });
+                Monitor.PulseAll(SendQueue);
             }
         }
 

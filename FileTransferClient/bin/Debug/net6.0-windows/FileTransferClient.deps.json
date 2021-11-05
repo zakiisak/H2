@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "FileTransferClient/1.0.0": {
+        "dependencies": {
+          "FileTransferServer": "1.0.0"
+        },
         "runtime": {
           "FileTransferClient.dll": {}
+        }
+      },
+      "FileTransferServer/1.0.0": {
+        "runtime": {
+          "FileTransferServer.dll": {}
         }
       }
     }
   },
   "libraries": {
     "FileTransferClient/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileTransferServer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

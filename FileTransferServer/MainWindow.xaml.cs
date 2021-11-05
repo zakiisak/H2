@@ -25,11 +25,27 @@ namespace FileTransferServer
         {
             InitializeComponent();
             this.Server = new FileServer();
+
+            Closing += MainWindow_Closing;
+        }
+
+        private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Server.Stop();
         }
 
         private void OnStartClicked(object sender, RoutedEventArgs e)
         {
-            if()
+            if (Server.IsStarted())
+            {
+                Server.Stop();
+                StartButton.Content = "Start";
+            }
+            else
+            {
+                Server.Start();
+                StartButton.Content = "Stop";
+            }
         }
     }
 }

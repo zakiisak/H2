@@ -7,15 +7,26 @@
         mc:Ignorable="d"
         Title="Fil " Height="450" Width="800">
     <Grid>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,27,0,0">
+        <ListView x:Name="FileItems" Margin="0,27,0,0" AllowDrop="True" Drop="FileItems_Drop">
             <ListView.View>
+
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Width="400" Header="Filer">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image  Width="20" Height="20" Source="{Binding Icon}" />
+                                    <Label Content="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
+
             </ListView.View>
         </ListView>
-        <Label Content="Label" HorizontalAlignment="Left" FontSize="20" Margin="0,-5,0,0" VerticalAlignment="Top"/>
-        <Button Content="Afbryd forbindelse" HorizontalAlignment="Left" Margin="695,3,0,0" VerticalAlignment="Top"/>
+        <Label Content="/" HorizontalAlignment="Left" FontSize="20" Margin="0,-5,0,0" VerticalAlignment="Top"/>
+        <Button Content="Afbryd forbindelsen" HorizontalAlignment="Left" Margin="688,3,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
