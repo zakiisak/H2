@@ -1,0 +1,21 @@
+﻿<Window x:Class="FileTransferClient.Explorer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileTransferClient"
+        mc:Ignorable="d"
+        Title="Fil " Height="450" Width="800">
+    <Grid>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,27,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Label" HorizontalAlignment="Left" FontSize="20" Margin="0,-5,0,0" VerticalAlignment="Top"/>
+        <Button Content="Afbryd forbindelse" HorizontalAlignment="Left" Margin="695,3,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

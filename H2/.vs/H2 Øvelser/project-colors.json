@@ -25,7 +25,12 @@
       "ProjectGuid": "ce205d18-c4b8-46ab-b4a1-a0df498c7e65",
       "DisplayName": "FlaskeAutomaten",
       "ColorIndex": 3
+    },
+    "72f2a5f9-efd6-41bd-95dc-f58ac2733554": {
+      "ProjectGuid": "72f2a5f9-efd6-41bd-95dc-f58ac2733554",
+      "DisplayName": "ThreadTests",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

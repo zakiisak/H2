@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H2 Øvelser", "H2 Øvelser.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlaskeAutomaten", "..\FlaskeAutomaten\FlaskeAutomaten.csproj", "{CE205D18-C4B8-46AB-B4A1-A0DF498C7E65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadTests", "..\ThreadTests\ThreadTests.csproj", "{72F2A5F9-EFD6-41BD-95DC-F58AC2733554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadTests", "..\ThreadTests\ThreadTests.csproj", "{72F2A5F9-EFD6-41BD-95DC-F58AC2733554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransferClient", "..\FileTransferClient\FileTransferClient.csproj", "{87305103-12AB-4F63-9747-6502C4490C95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransferServer", "..\FileTransferServer\FileTransferServer.csproj", "{9623BEF1-AD6F-4632-AC79-707A453ABD77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{72F2A5F9-EFD6-41BD-95DC-F58AC2733554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F2A5F9-EFD6-41BD-95DC-F58AC2733554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F2A5F9-EFD6-41BD-95DC-F58AC2733554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87305103-12AB-4F63-9747-6502C4490C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87305103-12AB-4F63-9747-6502C4490C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87305103-12AB-4F63-9747-6502C4490C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87305103-12AB-4F63-9747-6502C4490C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9623BEF1-AD6F-4632-AC79-707A453ABD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9623BEF1-AD6F-4632-AC79-707A453ABD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9623BEF1-AD6F-4632-AC79-707A453ABD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9623BEF1-AD6F-4632-AC79-707A453ABD77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
