@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileTransferServer;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -8,6 +9,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static FileTransferClient.ClientEvents;
+using static FileTransferServer.NetFileService;
 
 namespace FileTransferClient
 {
@@ -97,54 +100,61 @@ namespace FileTransferClient
             }
         }
 
-        public void WriteFile(string serverDirectory, string filePath, ClientEvents.OnFileSent onFileSent = null)
+        public void WriteFile(string serverDirectory, string filePath, OnFileSent onFileSent = null)
         {
             lock (SendQueue)
             {
                 SendQueue.Enqueue(() =>
                 {
-                    bool success = false;
-                    try
+                    Client.Send(new byte[] { FileTransfer.Config.ServerFileReceiveCode });
+
+                    byte[] confirmationBuffer = new byte[256];
+                    int length = Client.Receive(confirmationBuffer);
+
+                    if(length == 1)
                     {
-                        Client.Send(new byte[] { FileTransfer.Config.ServerFileReceiveCode });
-
-                        byte[] confirmationBuffer = new byte[256];
-                        Client.Receive(confirmationBuffer);
-
-                        FileStream stream = File.OpenRead(filePath);
-                        string fileName = Path.GetFileName(filePath);
-
-                        byte[] fileNameBytes = Encoding.Unicode.GetBytes(serverDirectory + "\n" + fileName);
-
-                        Client.Send(fileNameBytes);
-
-                        byte[] fileNameConfirmation = new byte[32];
-
-                        int confirmationBytesReceived = Client.Receive(fileNameConfirmation);
-                        if (confirmationBytesReceived == 1)
-                        {
-                            byte[] buffer = new byte[4096];
-
-                            int num = 0;
-                            while ((num = stream.Read(buffer, 0, buffer.Length)) != 0)
-                            {
-                                Client.Send(buffer);
-                            }
-
-                            Client.Send(FileTransfer.Config.EndOfFile);
-                        }
-
-                        success = true;
+                        NetFileService.SendFile(Client, filePath, serverDirectory, onFileSent);
                     }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Failed to send file: " + filePath + ", Exception: " + ex);
-                    }
-                    if (onFileSent != null)
-                        onFileSent(filePath, success);
 
                 });
                 Monitor.PulseAll(SendQueue);
+            }
+        }
+
+        public void ReceiveFile(string serverDirectory, string fileName, OnReceiveFile OnReceived = null)
+        {
+            try
+            {
+                lock (SendQueue)
+                {
+                    SendQueue.Enqueue(() =>
+                    {
+                        Client.Send(new byte[] { FileTransfer.Config.ServerFileSendCode });
+                        byte[] confirmationBuffer = new byte[32];
+                        int length = Client.Receive(confirmationBuffer);
+
+                        //Send the local file path
+                        string localPath = Path.Join(serverDirectory, fileName);
+                        byte[] localPathBytes = Encoding.Unicode.GetBytes(localPath);
+                        Client.Send(localPathBytes);
+
+                        if(length == 1)
+                        {
+                            string fullFilePath = NetFileService.ReceiveFile(Client, Path.GetTempPath());
+
+                            if(fullFilePath != null && OnReceived != null)
+                            {
+                                OnReceived(fullFilePath);
+                            }
+                        }
+
+                    });
+                    Monitor.PulseAll(SendQueue);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Failed to receive file! Exception: " + ex);
             }
         }
 

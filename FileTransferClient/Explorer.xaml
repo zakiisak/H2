@@ -25,8 +25,8 @@
 
             </ListView.View>
         </ListView>
-        <Label Content="/" HorizontalAlignment="Left" FontSize="20" Margin="0,-5,0,0" VerticalAlignment="Top"/>
-        <Button Content="Afbryd forbindelsen" HorizontalAlignment="Left" Margin="688,3,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DirectoryLabel" Content="/" HorizontalAlignment="Left" FontSize="20" Margin="0,-5,0,0" VerticalAlignment="Top"/>
+        <Button Content="Afbryd forbindelsen" Click="Disconnect_Click" HorizontalAlignment="Left" Margin="688,3,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

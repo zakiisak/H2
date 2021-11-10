@@ -30,69 +30,30 @@ namespace FileTransferServer
                     byte receivedByte = buffer[0];
                     Socket.Send(new byte[] { receivedByte });
                     if (receivedByte == FileTransfer.Config.ServerFileReceiveCode)
-                        ReceiveFile();
+                        NetFileService.ReceiveFile(Socket, FileTransfer.Config.ServerBaseDirectory);
                     else if (receivedByte == FileTransfer.Config.ServerListCode)
                         SendLists();
+                    else if (receivedByte == FileTransfer.Config.ServerFileSendCode)
+                        SendFile();
                 }   
             }
         }
 
-        private void ReceiveFile()
-        {
-            try
-            {
-                byte[] buffer = new byte[4096];
-                //First fetch the file name
-                int nameBufferLength = Socket.Receive(buffer);
-
-                string fileNameAndDirectory = Encoding.Unicode.GetString(buffer, 0, nameBufferLength);
-                string[] split = fileNameAndDirectory.Split('\n');
-                string directory = split[0];
-                string fileName = split[1];
-
-                //Clear the buffer
-                for (int i = 0; i < nameBufferLength; i++)
-                    buffer[i] = 0;
-
-                //Send a random confirmation byte back that the name was received
-                Socket.Send(new byte[] { 0 });
-
-                using (var fs = new FileStream(Path.Join(FileTransfer.Config.ServerBaseDirectory + directory, fileName), FileMode.Create, FileAccess.Write))
-                {
-                    int received = 0;
-                    while ((received = Socket.Receive(buffer)) != 0)
-                    {
-                        if(received == FileTransfer.Config.EndOfFile.Length)
-                        {
-                            bool equal = true;
-                            for(int i = 0; i < received; i++)
-                            {
-                                if(buffer[i] != FileTransfer.Config.EndOfFile[i])
-                                {
-                                    equal = false;
-                                    break;
-                                }
-                            }
-                            if(equal)
-                            {
-                                break;
-                            }
-                        }
-                        fs.Write(buffer, 0, received);
-                    }
-                    fs.Flush();
-                    fs.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Failed to receive file! ");
-            }
-        }
+        
 
         private void SendFile()
         {
+            //Send a one byte packet back to the client to confirm the request
+            Socket.Send(new byte[] { FileTransfer.Config.ServerFileSendCode });
 
+            byte[] localFilePathBuffer = new byte[2048];
+            int fileNameLength = Socket.Receive(localFilePathBuffer);
+
+            string filePath = Encoding.Unicode.GetString(localFilePathBuffer, 0, fileNameLength);
+
+            string fullPath = Path.Join(FileTransfer.Config.ServerBaseDirectory, filePath);
+
+            NetFileService.SendFile(Socket, fullPath, "/", null);
         }
 
         private void SendLists()
@@ -109,8 +70,14 @@ namespace FileTransferServer
                 
                 FileInfo[] files = dirInfo.GetFiles();
                 DirectoryInfo[] directories = dirInfo.GetDirectories();
+                bool hasParent = dirInfo.Parent != null;
 
                 string finalString = "";
+
+                //If the length is only 1, it means we're in the base directory: "/"
+                if (hasParent && receivedDirectory.Length > 1)
+                    finalString += ".../\n";
+
                 for(int i = 0; i < files.Length; i++)
                 {
                     finalString += files[i].Name;

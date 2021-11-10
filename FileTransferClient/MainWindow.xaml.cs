@@ -24,6 +24,7 @@ namespace FileTransferClient
         public MainWindow()
         {
             InitializeComponent();
+            new FileTransferServer.FileServer().Start();
             Client = new FileClient();
         }
 

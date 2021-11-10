@@ -7,7 +7,7 @@
         mc:Ignorable="d" ResizeMode="NoResize"
         Title="MainWindow" Height="220" Width="193">
     <Grid>
-        <TextBox x:Name="IpField" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="119" Margin="0,60,0,0"/>
+        <TextBox x:Name="IpField" Text="localhost" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="119" Margin="0,60,0,0"/>
         <Label Content="Ip addresse" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.557,-0.272"/>
         <TextBox x:Name="PortField" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="119" Text="8008" Margin="0,96,0,0"/>
         <Label Content="Port" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0.557,-0.272" Margin="0,76,0,0"/>

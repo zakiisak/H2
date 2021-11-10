@@ -4,7 +4,6 @@ C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\bin\Debug\net6.0-window
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\bin\Debug\net6.0-windows\FileTransferServer.dll
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\bin\Debug\net6.0-windows\ref\FileTransferServer.dll
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\bin\Debug\net6.0-windows\FileTransferServer.pdb
-C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\obj\Debug\net6.0-windows\FileTransferServer.csproj.AssemblyReference.cache
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Isak\source\repos\H2 Opgaver\FileTransferServer\obj\Debug\net6.0-windows\FileTransferServer_MarkupCompile.cache

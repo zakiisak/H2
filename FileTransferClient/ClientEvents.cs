@@ -8,7 +8,7 @@ namespace FileTransferClient
 {
     public class ClientEvents
     {
-        public delegate void OnFileSent(string filePath, bool Success);
         public delegate void OnReceiveFileList(string directory, string[] files);
+        public delegate void OnReceiveFile(string filePath);
     }
 }

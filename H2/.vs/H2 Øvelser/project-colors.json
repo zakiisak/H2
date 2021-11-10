@@ -30,7 +30,17 @@
       "ProjectGuid": "72f2a5f9-efd6-41bd-95dc-f58ac2733554",
       "DisplayName": "ThreadTests",
       "ColorIndex": 4
+    },
+    "87305103-12ab-4f63-9747-6502c4490c95": {
+      "ProjectGuid": "87305103-12ab-4f63-9747-6502c4490c95",
+      "DisplayName": "FileTransferClient",
+      "ColorIndex": 5
+    },
+    "9623bef1-ad6f-4632-ac79-707a453abd77": {
+      "ProjectGuid": "9623bef1-ad6f-4632-ac79-707a453abd77",
+      "DisplayName": "FileTransferServer",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 7
 }

@@ -27,21 +27,58 @@ namespace FileTransferClient
             this.Client = Client;
             InitializeComponent();
 
-            Client.GetFileNamesInDirectory(Directory, delegate (string directory, string[] files)
+            Client.GetFileNamesInDirectory(Directory, UpdateFiles);
+            FileItems.MouseDoubleClick += FileItems_MouseDoubleClick;
+        }
+
+        private void UpdateDirectory(string fullPathDirectory)
+        {
+            Directory = fullPathDirectory;
+            DirectoryLabel.Content = Directory;
+            Client.GetFileNamesInDirectory(Directory, UpdateFiles);
+        }
+
+        private void FileItems_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FileItem selected = (FileItem)((ListView)sender).SelectedValue;
+            if(selected.IsDirectory)
             {
-                Debug.WriteLine(directory + ", file count: " + files.Length);
-                Dispatcher.Invoke(() =>
+                if(selected.Name.StartsWith("..."))
                 {
-                    PopulateFiles(directory, files);
-                });
+                    //Go one up
+                    string newDirectory = Directory.Substring(0, Directory.LastIndexOf('/'));
+                    newDirectory = newDirectory.Substring(0, newDirectory.LastIndexOf('/') + 1);
+                    UpdateDirectory(newDirectory);
+                }
+                else
+                    UpdateDirectory(Directory + selected.Name + "/");
+            }
+            //Download and open file
+            else
+            {
+                Client.ReceiveFile(Directory, selected.Name, OnFileReceived);
+            }
+        }
+
+        private void OnFileReceived(string fullPath)
+        {
+            System.Diagnostics.Process.Start(fullPath);
+        }
+
+        private void UpdateFiles(string directory, string[] files)
+        {
+            Debug.WriteLine(directory + ", file count: " + files.Length);
+            Dispatcher.Invoke(() =>
+            {
+                PopulateFiles(directory, files);
             });
         }
+
 
         private void PopulateFiles(string directory, string[] files)
         {
             Directory = directory;
             List<FileItem> filesInDirectory = new List<FileItem>();
-
             foreach(string file in files)
             {
                 if (file.EndsWith("/"))
@@ -60,10 +97,18 @@ namespace FileTransferClient
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 foreach(string file in files)
                 {
-                    Client.WriteFile(Directory, file);
+                    Client.WriteFile(Directory, file, delegate (string filePath, bool Success)
+                    {
+                        Client.GetFileNamesInDirectory(Directory, UpdateFiles);
+                    });
                 }
 
             }
+        }
+
+        private void Disconnect_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
